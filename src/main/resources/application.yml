@@ -1,0 +1,28 @@
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+#  file: var/log/tomcat/sell.log
+#  level:
+#    com.kevindeemo.LoggerTest : debug
+##  level: debug
+#  path: var/log/tomcat/
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.1.161/sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+#  jackson是spring-boot的web/webflux框架默认依赖的json库，
+#  所以依赖引入web即可实现jackson的自动化配置
+  jackson:
+#   全局定义：value为null时被过滤，不返回
+    default-property-inclusion: non_null
+server:
+  context-path: /sell
+
+wechat:
+  mpAppId: wx22fc3eca01cead25
+  mpAppSecret: e652f1e520ee23d41925e1b9ddc3843f

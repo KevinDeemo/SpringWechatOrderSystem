@@ -1,0 +1,21 @@
+2020-07-18 22:37:10.457  INFO 1049 --- [main] com.kevindeemo.LoggerTest                : Starting LoggerTest on MacBook-Pro1.local with PID 1049 (started by chenkexun in /Users/chenkexun/IdeaProjects/Sell)
+2020-07-18 22:37:10.458 DEBUG 1049 --- [main] com.kevindeemo.LoggerTest                : Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE
+2020-07-18 22:37:10.458  INFO 1049 --- [main] com.kevindeemo.LoggerTest                : No active profile set, falling back to default profiles: default
+2020-07-18 22:37:10.485  INFO 1049 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@57cf54e1: startup date [Sat Jul 18 22:37:10 PDT 2020]; root of context hierarchy
+2020-07-18 22:37:10.573  INFO 1049 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2020-07-18 22:37:10.629  INFO 1049 --- [main] com.kevindeemo.LoggerTest                : Started LoggerTest in 10.44 seconds (JVM running for 10.967)
+2020-07-18 22:37:10.677 DEBUG 1049 --- [main] com.kevindeemo.LoggerTest                : 1
+2020-07-18 22:37:10.677  INFO 1049 --- [main] com.kevindeemo.LoggerTest                : 2
+2020-07-18 22:37:10.677 ERROR 1049 --- [main] com.kevindeemo.LoggerTest                : 3
+2020-07-18 22:37:10.682  INFO 1049 --- [Thread-1] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@57cf54e1: startup date [Sat Jul 18 22:37:10 PDT 2020]; root of context hierarchy
+2020-07-18 23:15:46.595  INFO 1285 --- [main] com.kevindeemo.LoggerTest                : Starting LoggerTest on MacBook-Pro1.local with PID 1285 (started by chenkexun in /Users/chenkexun/IdeaProjects/Sell)
+2020-07-18 23:15:46.597 DEBUG 1285 --- [main] com.kevindeemo.LoggerTest                : Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE
+2020-07-18 23:15:46.598  INFO 1285 --- [main] com.kevindeemo.LoggerTest                : No active profile set, falling back to default profiles: default
+2020-07-18 23:15:46.626  INFO 1285 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@66498326: startup date [Sat Jul 18 23:15:46 PDT 2020]; root of context hierarchy
+2020-07-18 23:15:46.753  INFO 1285 --- [main] com.kevindeemo.LoggerTest                : Started LoggerTest in 10.421 seconds (JVM running for 10.878)
+2020-07-18 23:15:46.784 DEBUG 1285 --- [main] com.kevindeemo.LoggerTest                : debug...
+2020-07-18 23:15:46.784  INFO 1285 --- [main] com.kevindeemo.LoggerTest                : name: imooc ,password: 123456
+2020-07-18 23:15:46.784  INFO 1285 --- [main] com.kevindeemo.LoggerTest                : name: imooc, password: 123456
+2020-07-18 23:15:46.785 ERROR 1285 --- [main] com.kevindeemo.LoggerTest                : error...
+2020-07-18 23:15:46.785  WARN 1285 --- [main] com.kevindeemo.LoggerTest                : warn...
+2020-07-18 23:15:46.788  INFO 1285 --- [Thread-1] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@66498326: startup date [Sat Jul 18 23:15:46 PDT 2020]; root of context hierarchy
