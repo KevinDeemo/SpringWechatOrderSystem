@@ -13,6 +13,7 @@ import com.kevindeemo.exception.SellException;
 import com.kevindeemo.repository.OrderDetailRepository;
 import com.kevindeemo.repository.OrderMasterRepository;
 import com.kevindeemo.service.OrderService;
+import com.kevindeemo.service.PayService;
 import com.kevindeemo.service.ProductService;
 import com.kevindeemo.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -44,6 +45,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private PayService payService;
 
     @Override
     @Transactional
@@ -145,7 +149,7 @@ public class OrderServiceImpl implements OrderService {
 
 //        如果已支付，需要退款
         if (orderDTO.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())) {
-            //TODO
+            payService.refund(orderDTO);
         }
         return orderDTO;
     }

@@ -26,6 +26,7 @@ public class WeChatController {
     WxMpService wxMpService;
 
     @GetMapping("/authorize")
+//    returnUrl : http://sell/com/#/ 编码后的形势，所以需要解码
     public String authorize(@RequestParam("returnUrl") String returnUrl) throws IOException {
 //        手动调试方式
 //        log.info("进入auth方法......");
@@ -40,7 +41,7 @@ public class WeChatController {
 //        1. 配置
 //        2. 调用方法
         String url = "http://kevinsell.nat300.top/sell/wechat/userInfo";
-        String redirectUrl = wxMpService.oauth2buildAuthorizationUrl(url, WxConsts.OAUTH2_SCOPE_BASE, URLEncoder.encode(returnUrl));
+        String redirectUrl = wxMpService.oauth2buildAuthorizationUrl(url, WxConsts.OAUTH2_SCOPE_USER_INFO, URLEncoder.encode(returnUrl));
         return "redirect:" + redirectUrl;
     }
 
@@ -55,7 +56,6 @@ public class WeChatController {
             throw new SellException(ResultEnum.WX_MP_ERROR.getCode(), e.getError().getErrorMsg());
         }
         String openId = wxMpOAuth2AccessToken.getOpenId();
-        return "redirect:" + returnUrl + "?openId=" + openId;
-        
+        return "redirect:" + returnUrl + "?openid=" + openId;
     }
 }
