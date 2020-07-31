@@ -1,10 +1,12 @@
 package com.kevindeemo.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.kevindeemo.dataobject.OrderDetail;
 import com.kevindeemo.enums.OrderStatusEnum;
 import com.kevindeemo.enums.PayStatusEnum;
+import com.kevindeemo.utils.EnumUtil;
 import com.kevindeemo.utils.serializer.Date2LongSerializer;
 import lombok.Data;
 
@@ -53,4 +55,14 @@ public class OrderDTO {
 //    如果list为null，则不返回
 //    需要跟前端约定具体的参数返回形式，也可以是返回一个空的list（只需要给orderDetailList初始化即可）
     private List<OrderDetail> orderDetailList;
+
+    @JsonIgnore
+    public OrderStatusEnum getOrderStatusEnum(){
+        return EnumUtil.getByCode(orderStatus, OrderStatusEnum.class);
+    }
+
+    @JsonIgnore
+    public PayStatusEnum getPayStatusEnum(){
+        return EnumUtil.getByCode(payStatus, PayStatusEnum.class);
+    }
 }
