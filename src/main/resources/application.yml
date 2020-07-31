@@ -25,12 +25,12 @@ server:
 
 wechat:
   myAuthrizeAppId: wx22fc3eca01cead25
-  myAuthrizeAppSecret: e652f1e520ee23d41925e1b9ddc3843f
+  myAuthrizeAppSecret: #########
 
   mpAppId: wxd898fcb01713c658
-  mpAppSecret: oTgZpwes1yqGU7r8MS1dbMYwQsuE
-  mchId: 1483469312
-  mchKey: 098F6BCD4621D373CADE4E832627B4F6
-#  退款证书
+  mpAppSecret: #########
+  mchId: #########
+  mchKey: #########
+  #  退款证书
   keyPath: /Users/chenkexun/Desktop/h5.p12
   notifyUrl: http://kevinsell.nat300.top/sell/pay/notify
