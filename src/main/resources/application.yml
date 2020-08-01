@@ -15,10 +15,10 @@ spring:
     url: jdbc:mysql://192.168.1.161/sell?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
-#  jackson是spring-boot的web/webflux框架默认依赖的json库，
-#  所以依赖引入web即可实现jackson的自动化配置
+  #  jackson是spring-boot的web/webflux框架默认依赖的json库，
+  #  所以依赖引入web即可实现jackson的自动化配置
   jackson:
-#   全局定义：value为null时被过滤，不返回
+    #   全局定义：value为null时被过滤，不返回
     default-property-inclusion: non_null
 server:
   context-path: /sell

@@ -19,7 +19,10 @@ public enum ResultEnum {
     WX_MP_ERROR(11, "微信公众账号方面错误"),
     WXPAY_NOTIFY_MONEY_VERIFY_ERROR(12, "微信支付异步通知金额校验不通过"),
     CANCEL_SUCCESS(13, "订单取消成功"),
-    FINISH_SUCCESS(14, "订单完结成功")
+    FINISH_SUCCESS(14, "订单完结成功"),
+    PRODUCT_ONSALE_SUCCESS(15, "商品上架成功"),
+    PRODUCT_STATUS_ERROR(16,"商品状态不正确"),
+    PRODUCT_OFFSALE_SUCCESS(17, "商品下架成功")
     ;
 
 
