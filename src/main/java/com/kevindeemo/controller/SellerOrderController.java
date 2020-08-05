@@ -22,7 +22,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/seller/order")
 @Slf4j
-public class SellOrderController {
+public class SellerOrderController {
 
     @Autowired
     OrderService orderService;

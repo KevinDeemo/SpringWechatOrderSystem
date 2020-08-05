@@ -9,20 +9,27 @@ import com.kevindeemo.repository.ProductInfoRepository;
 import com.kevindeemo.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+
 @Service
 @Slf4j
+//@CacheConfig(cacheNames = "product")
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
     ProductInfoRepository repository;
 
     @Override
+//    key需要保持一致
+    @Cacheable(key = "123")
     public ProductInfo findOne(String productId) {
         return repository.findOne(productId);
     }
@@ -38,6 +45,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @CachePut(key = "123")
     public ProductInfo save(ProductInfo productInfo) {
         return repository.save(productInfo);
     }

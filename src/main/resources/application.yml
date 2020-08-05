@@ -12,7 +12,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql://192.168.1.161/sell?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://192.168.1.188/sell?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
   #  jackson是spring-boot的web/webflux框架默认依赖的json库，
@@ -20,17 +20,45 @@ spring:
   jackson:
     #   全局定义：value为null时被过滤，不返回
     default-property-inclusion: non_null
+  redis:
+    host: 192.168.1.188
+    port: 6379
 server:
   context-path: /sell
 
 wechat:
-  myAuthrizeAppId: wx22fc3eca01cead25
-  myAuthrizeAppSecret: #########
+  myAuthorizeAppId: wx22fc3eca01cead25
+  myAuthorizeAppSecret: e652f1e520ee23d41925e1b9ddc3843f
 
   mpAppId: wxd898fcb01713c658
-  mpAppSecret: #########
-  mchId: #########
-  mchKey: #########
+  mpAppSecret: oTgZpwes1yqGU7r8MS1dbMYwQsuE
+
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+
+  mchId: 1483469312
+  mchKey: 098F6BCD4621D373CADE4E832627B4F6
   #  退款证书
   keyPath: /Users/chenkexun/Desktop/h5.p12
   notifyUrl: http://kevinsell.nat300.top/sell/pay/notify
+
+  templateId:
+    orderStatus: agE_ISeBkrCn8x4ouWfJjP5CThcMIBYikkcI
+
+projectUrl:
+  wechatMpAuthorize: http://kevinsell.nat300.top
+  wechatOpenAuthorize: http://kevinsell.nat300.top
+  sell: http://kevinsell.nat300.top
+  #  sell: 192.168.1.171:8080
+  fixedUrl: https://open.weixin.qq.com/connect/qrconnect?appid=wx6ad144e54af67d87&redirect_uri=http%3A%2F%2Fsell.springboot.cn%2Fsell%2Fqr%2FoTgZpwes1yqGU7r8MS1dbMYwQsuE&response_type=code&scope=snsapi_login&state=http%3a%2f%2fkevinsell.nat300.top%2fsell%2fwechat%2fqrUserInfo
+
+# 打印mybatis的sql语句
+logging:
+  level:
+    com:
+      kevindeemo:
+        dataobject:
+          mapper: trace
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

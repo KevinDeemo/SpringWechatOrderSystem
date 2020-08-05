@@ -12,6 +12,11 @@ import java.math.BigDecimal;
 @Data
 public class OrderDetail {
 
+    /*
+    * JPA 会根据驼峰式命名规则对名字进行转换，然后到数据库中找对应的数据
+    * eg: detailId -> detail_id
+    * 所以在命名的时候需要考虑匹配因素
+    * */
     @Id
     private String detailId;
 

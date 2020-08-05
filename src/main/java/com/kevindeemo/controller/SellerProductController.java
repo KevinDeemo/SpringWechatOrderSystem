@@ -13,6 +13,8 @@ import com.kevindeemo.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -105,6 +107,17 @@ public class SellerProductController {
     * 保存/更新
     * */
     @PostMapping("/save")
+
+    /*
+    * 因为Controller返回参数是ModelAndView，不能序列化，所以如果想使每次操作都自动更新缓存，可以在Service层添加注释
+    * */
+
+//    每次操作更新缓存
+//    @CachePut(cacheNames = "product", key = "123")
+
+
+//    清除缓存
+//    @CacheEvict(cacheNames = "product", key = "123")
     public ModelAndView save(@Valid ProductForm form,
                              BindingResult bindingResult,
                              Map<String, Object> map){

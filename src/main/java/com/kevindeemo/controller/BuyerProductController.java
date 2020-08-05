@@ -12,6 +12,7 @@ import com.kevindeemo.service.impl.CategoryServiceImpl;
 import com.kevindeemo.utils.ResultVOUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,12 +32,16 @@ public class BuyerProductController {
     CategoryService categoryService;
 
     @RequestMapping("/list")
+//    可以使用"#"的方式动态输入key，并且设置condition，unless用来设置取反条件
+//    condition是在方法执行之前判断
+//    unless是在方法执行之后判断，用于对方法的返回结果判断
+    @Cacheable(cacheNames = "product", key = "123", condition = "", unless = "#result.getCode()!=0")
     public ResultVO list() {
 //        1. 查询所有的上架商品
         List<ProductInfo> productInfoList = productCategoryRepository.findUpAll();
 
 //        2. 查询类目（一次性查询）
-//        List<Integer> categoryTypeList = new ArrayList<>();
+//        List< Integer> categoryTypeList = new ArrayList<>();
 //////        传统方法
 ////        for (ProductInfo productInfo : productInfoList){
 ////            categoryTypeList.add(productInfo.getCategoryType());
