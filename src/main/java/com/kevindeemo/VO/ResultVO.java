@@ -23,4 +23,5 @@ public class ResultVO<T> implements Serializable {
 
     // 返回的具体内容
     private T data;
+    
 }
